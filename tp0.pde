@@ -1,11 +1,15 @@
+PImage img; 
+
 void setup() {
 
   size(400, 400);
+  img = loadImage("retrato.png");
 }
 
 void draw() {
 
   background(216, 236, 255);
+  image(img, 400, height/8);
 
   // ---------- CABELLO ATRÁS ----------
 
