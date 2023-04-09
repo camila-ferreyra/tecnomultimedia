@@ -1,15 +1,16 @@
-PImage img; 
+PImage img;
 
 void setup() {
 
-  size(400, 400);
+  size(800, 400);
   img = loadImage("retrato.png");
 }
 
 void draw() {
 
-  background(216, 236, 255);
-  image(img, 400, height/8);
+  background(220, 234, 242);
+  image(img, 400, 0);
+
 
   // ---------- CABELLO ATRÁS ----------
 
@@ -19,10 +20,14 @@ void draw() {
 
   beginShape(QUADS);
   vertex(110, 0);
-  vertex(80, 350);
+  vertex(70, 350);
   vertex(300, 350);
   vertex(200, 0);
   endShape();
+
+  noStroke();
+  fill(230, 247, 162);
+  triangle(143, 60, 70, 350, 110, 350);
   pop();
 
   // ---------- ROSTRO ----------
@@ -106,6 +111,12 @@ void draw() {
   vertex(150, 130);
   vertex(145, 0);
   endShape();
+
+  noStroke();
+  fill(230, 247, 162);
+  triangle(0, 0, 0, 130, 10, 130);
+  triangle(80, 0, 100, 130, 110, 130);
+
   pop();
 
   // ---------- LABIOS Y SORBETE ----------
@@ -114,7 +125,7 @@ void draw() {
   smooth();
   stroke(211, 92, 120);
   fill(211, 92, 120);
-  bezier(-3, 300, -15, 320, 10, 320, 35, 308);
+  bezier(0, 300, -20, 335, 10, 330, 42, 310);
   endShape();
   fill(201, 202, 240);
   stroke(195, 195, 227);
@@ -133,5 +144,31 @@ void draw() {
   fill(211, 92, 120);
   ellipse(0, 300, 13, 13);
   bezier(3, 302, 4, 280, 20, 295, 40, 310);
+  pop();
+
+  // ---------- GORRITO ----------
+
+  push();
+  smooth();
+  fill(90, 134, 222);
+  bezier(-600, -30, 100, 100, 260, 30, 225, -30);
+  pop();
+
+  // ---------- LENTES ----------
+
+  push();
+  stroke(204, 205, 206);
+  fill(255, 255, 255, 150);
+
+  beginShape(QUADS);
+  vertex(15, 185);
+  vertex(130, 195);
+  vertex(120, 235);
+  vertex(24, 235);
+  endShape();
+
+  line(0, 185, 15, 185);
+  line(0, 191, 15, 192);
+
   pop();
 }
